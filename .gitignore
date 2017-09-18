@@ -1,0 +1,6 @@
+.DS_Store
+config
+*.iml
+.idea
+params-*.yml
+*.sw[po]
