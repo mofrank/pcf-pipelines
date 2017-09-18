@@ -20,22 +20,14 @@ resource_types:
   source:
     repository: pivotalcf/pivnet-resource
     tag: latest-final
-
 resources:
 - name: pcf-pipelines
-  type: github-release
+  type: git
   source:
-    owner:  pivotal-cf
-    repository:  pcf-pipelines
-    release:  false
-    access_token:  a5a96fbf99a353f13f2bb3befa8d219939e95db2
-###  Mike will delete the access token above after the dojo, so don't keep using it.
-###  TLB, 9/18/2017
-
-###    uri: https://github.com/pivotal-cf/pcf-pipelines
-###    branch: master
- #   private_key: {{git_private_key}}
-
+    uri: https://github.com/mofrank/pcf-pipelines
+    branch: master
+    username: {{github_username}}
+    password: {{githubtoken}}
 - name: tile
   type: pivnet
   source:

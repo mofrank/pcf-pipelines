@@ -16,7 +16,7 @@ set -eu
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-version=$(jq --raw-output '.Release.Version' < ./pivnet-product/metadata.json)
+version=$(jq -r '.ProductFiles[] | select(.AWSObjectKey | endswith("pivotal")) | .FileVersion' < ./pivnet-product/metadata.json)
 
 om-linux --target "https://${OPSMAN_DOMAIN_OR_IP_ADDRESS}" \
    --skip-ssl-validation \
